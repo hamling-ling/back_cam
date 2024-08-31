@@ -439,9 +439,9 @@ class CamService: Service() {
 
         val TAG = "CamService"
 
-        val ACTION_START = "eu.sisik.backgroundcam.action.START"
-        val ACTION_START_WITH_PREVIEW = "eu.sisik.backgroundcam.action.START_WITH_PREVIEW"
-        val ACTION_STOPPED = "eu.sisik.backgroundcam.action.STOPPED"
+        val ACTION_START = "com.example.back_cam.action.START"
+        val ACTION_START_WITH_PREVIEW = "com.example.back_cam.action.START_WITH_PREVIEW"
+        val ACTION_STOPPED = "com.example.back_camaction.STOPPED"
 
         val ONGOING_NOTIFICATION_ID = 6660
         val FOREGROUND_SERVICE_TYPE_CAMERA = 64
