@@ -152,6 +152,7 @@ class CamService: Service() {
         try {
             fos = FileOutputStream(file)
             fos.write(data)
+            Log.i(TAG, filename)
         } catch (e: java.lang.Exception) {
             e.printStackTrace()
         } finally {
