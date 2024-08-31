@@ -194,14 +194,17 @@ class CamService: Service() {
             ACTION_START_WITH_PREVIEW -> startWithPreview()
         }
 
+        startForeground()
+
         //return super.onStartCommand(intent, flags, startId)
         // 死んでも復活
         return START_STICKY
     }
 
     override fun onCreate() {
+        Log.i(TAG, "onCreate")
         super.onCreate()
-        startForeground()
+        //startForeground()
     }
 
     override fun onDestroy() {
