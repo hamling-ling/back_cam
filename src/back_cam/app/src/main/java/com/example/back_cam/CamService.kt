@@ -119,7 +119,7 @@ class CamService: Service() {
             if(image.planes != null && image.planes.any() && image.planes[0].buffer != null) {
                 val nextSaveTime = Calendar.getInstance()
                 nextSaveTime.time = lastSavedTime
-                nextSaveTime.add(Calendar.SECOND, 10)
+                nextSaveTime.add(Calendar.SECOND, saveIntervalSec)
 
                 if(nextSaveTime.time < Calendar.getInstance().time ) {
                     saveJpg(image)
