@@ -11,14 +11,17 @@ class BootReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent?) {
         Log.i(TAG, "onReceive")
-        //notifyService(context)
+        notifyService(context)
     }
 
     private fun notifyService(context:Context){
         Log.i(TAG, "startingService")
         val intent = Intent(context, CamService::class.java)
         intent.action = CamService.ACTION_START
-        context.startService(intent)
+
+        //context.startService(intent)
+
+        context.startForegroundService(intent)
     }
 
 }
