@@ -9,13 +9,13 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.back_cam.R
 import eu.sisik.backgroundcam.isServiceRunning
 
 
@@ -47,6 +47,24 @@ class MainActivity : AppCompatActivity() {
                 // We don't have camera permission yet. Request it from the user.
                 ActivityCompat.requestPermissions(this, permissions, CODE_PERM_CAMERA)
             }
+        }
+
+        if(intent.extras?.get(BootReceiver.IS_NEWER_VERSION_BOOT) == true) {
+            Log.i(TAG, "starting activity for is_newer_version_boot")
+
+            if (!isServiceRunning(this, CamService::class.java)) {
+                Log.i(TAG, "service is not running")
+
+                Log.i(TAG, "starting CamService")
+                notifyService(CamService.ACTION_START)
+
+                Log.i(TAG, "finishing activity")
+                finish()
+            } else {
+                Log.i(TAG, "service already running so do nothing")
+            }
+        } else {
+            Log.i(TAG, "intent does not contain ${BootReceiver.IS_NEWER_VERSION_BOOT}")
         }
     }
 

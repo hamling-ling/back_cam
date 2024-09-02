@@ -1,6 +1,5 @@
 package com.example.back_cam
 
-//import android.support.v4.app.NotificationCompat
 import android.Manifest
 import android.app.Notification
 import android.app.NotificationChannel
@@ -35,7 +34,6 @@ import android.view.View
 import android.view.WindowManager
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
-import com.example.back_cam.R
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
